@@ -48,44 +48,6 @@ Color-coded priority indicators included.
 - Clean dark-theme UI  
 - Error handling + loading states  
 
----
-
-### ✓ Backend (Python + Django)
-- No database required (tasks come through request)
-- API Endpoints:
-  
-#### **POST /api/tasks/analyze/**
-Request:
-```json
-{
-  "strategy": "smart_balance",
-  "tasks": [
-    {"id":"1","title":"Fix bug","due_date":"2025-11-30","estimated_hours":3,"importance":8,"dependencies":[]}
-  ]
-}
-Response:
-
-{
-  "results": [
-    {
-      "id": "1",
-      "title": "Fix bug",
-      "score": 47.2,
-      "explanation": {
-        "urgency_text": "3 days left",
-        "importance": 8,
-        "effort_hours": 3,
-        "blocks_count": 0
-      }
-    }
-  ]
-}
-
-GET /api/tasks/suggest/
-
-
-
-
 
 Returns top 3 tasks with explanations.
 🧠 Algorithm Explanation (Summary)
@@ -188,3 +150,41 @@ powershell
 git add README.md
 git commit -m "Add professional README"
 git push
+
+### ✓ Backend (Python + Django)
+- No database required (tasks come through request)
+- API Endpoints:
+  
+#### **POST /api/tasks/analyze/**
+Request:
+```json
+{
+  "strategy": "smart_balance",
+  "tasks": [
+    {"id":"1","title":"Fix bug","due_date":"2025-11-30","estimated_hours":3,"importance":8,"dependencies":[]}
+  ]
+}
+Response:
+
+{
+  "results": [
+    {
+      "id": "1",
+      "title": "Fix bug",
+      "score": 47.2,
+      "explanation": {
+        "urgency_text": "3 days left",
+        "importance": 8,
+        "effort_hours": 3,
+        "blocks_count": 0
+      }
+    }
+  ]
+}
+
+GET /api/tasks/suggest/
+
+
+
+
+
