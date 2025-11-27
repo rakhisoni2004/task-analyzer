@@ -1,0 +1,71 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vistara Smart Task Analyzer</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+  <main class="wrap">
+    <header><h1>Vistara Smart Task Analyzer</h1></header>
+
+    <section class="input-area">
+      <label>Paste tasks JSON array:</label>
+
+      <textarea id="bulk" placeholder='[
+  {"id":"1","title":"Fix X","due_date":"2025-11-30","estimated_hours":3,"importance":8,"dependencies":[]}
+]'>
+[
+  {"id":"1","title":"Fix login bug","due_date":"2025-11-30","estimated_hours":3,"importance":8,"dependencies":[]},
+  {"id":"2","title":"Write docs","due_date":"2025-12-05","estimated_hours":1,"importance":6,"dependencies":["1"]},
+  {"id":"3","title":"Deploy site","due_date":"2025-11-25","estimated_hours":4,"importance":9,"dependencies":["1","2"]}
+]
+      </textarea>
+
+      <div class="controls">
+        <select id="strategy">
+          <option value="smart_balance">Smart Balance</option>
+          <option value="fastest_wins">Fastest Wins</option>
+          <option value="high_impact">High Impact</option>
+          <option value="deadline_driven">Deadline Driven</option>
+        </select>
+
+        <div style="display:flex;gap:8px;">
+          <button id="analyze">Analyze Tasks</button>
+          <button id="load-sample">Sample</button>
+        </div>
+      </div>
+
+      <small class="hint">Tip: paste valid JSON array.</small>
+    </section>
+
+    <section id="suggested" class="output-area"></section>
+
+    <section id="output" class="output-area"></section>
+
+    <!-- NEW: Eisenhower Matrix -->
+    <section id="eisenhower" class="output-area" style="margin-top:18px;">
+      <h2 class="section-title">✨ Eisenhower Matrix <span class="top">(Urgent vs Important)</span></h2>
+      <div id="matrix" class="matrix-grid">
+        <!-- 4 cells rendered by JS -->
+      </div>
+    </section>
+
+    <!-- NEW: Dependency Graph -->
+    <section id="dep-graph" class="output-area" style="margin-top:18px;">
+      <h2 class="section-title">🔗 Dependency Graph</h2>
+      <div id="graph-area" class="graph-area">
+        <!-- svg injected here -->
+      </div>
+      <div id="graph-legend" class="graph-legend" style="margin-top:8px;color:var(--muted);font-size:13px">
+        <span style="margin-right:10px">• Blue = task node</span>
+        <span style="margin-right:10px">• Red border = node in a cycle</span>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="/static/js/script.js"></script>
+</body>
+</html>

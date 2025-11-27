@@ -1,0 +1,229 @@
+﻿:root{
+  --bg:#0f1724; 
+  --card:#0b1220; 
+  --accent:#6cc1ff; 
+  --muted:#98a0b3;
+  --glass: rgba(255,255,255,0.05);
+  --urgent:#ff6b6b;
+  --important:#ffd166;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Inter,Segoe UI,Arial;
+  background:var(--bg);
+  color:#e6eef8;
+}
+
+.wrap{
+  max-width:980px;
+  margin:20px auto;
+  padding:18px;
+}
+
+header h1{
+  margin:0 0 12px;
+  font-size:22px;
+  color:var(--accent);
+}
+
+/* Input area */
+.input-area{
+  background:linear-gradient(180deg,#081026aa,#081026);
+  padding:14px;
+  border-radius:10px;
+  margin-bottom:15px;
+}
+
+label{color:var(--muted); margin-bottom:8px; display:block;}
+
+textarea{
+  width:100%;
+  height:140px;
+  background:#021024;
+  color:#e6eef8;
+  border:1px solid #123;
+  padding:10px;
+  border-radius:6px;
+  resize:vertical;
+}
+
+.controls{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+  align-items:center;
+}
+
+select,button{
+  padding:8px 12px;
+  border-radius:6px;
+  border:none;
+}
+
+select{
+  background:#07233a;
+  color:#e6eef8;
+}
+
+button{
+  background:var(--accent);
+  color:#061f2d;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* Suggested panel */
+.suggest-card{
+  background:linear-gradient(90deg,#1e2b4a,#2b3b58);
+  padding:14px;
+  margin-bottom:10px;
+  border-radius:8px;
+  border-left:5px solid #6cc1ff;
+}
+
+.suggest-title{
+  font-weight:700;
+  font-size:15px;
+}
+
+.suggest-meta{
+  font-size:13px;
+  color:#c7d4e8;
+}
+
+/* Task list output */
+.task-card{
+  padding:12px;
+  border-radius:8px;
+  margin-bottom:10px;
+  background:linear-gradient(90deg,#071423,#082233);
+  border:1px solid var(--glass);
+  transition:.2s ease;
+}
+
+.task-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.45);
+}
+
+.task-title{font-weight:700;}
+
+.meta{
+  font-size:13px;
+  color:var(--muted);
+  margin-top:6px;
+}
+
+.badge{
+  display:inline-block;
+  padding:4px 8px;
+  background:rgba(255,255,255,0.04);
+  border-radius:6px;
+  margin-right:6px;
+  font-size:12px;
+}
+
+.alert{
+  padding:12px;
+  border-radius:8px;
+  margin-bottom:10px;
+}
+
+.alert.error{
+  background:#2a0b0b;
+  color:#ffb8b8;
+  border:1px solid #7a1a1a;
+}
+
+.alert.warn{
+  background:#443300;
+  color:#ffe58a;
+  border:1px solid #665500;
+}
+
+.loader{
+  background:#091021;
+  padding:12px;
+  border-radius:8px;
+  border:1px solid #123;
+  color:#fff;
+  text-align:center;
+}
+
+button:disabled{
+  background:#777 !important;
+  cursor:not-allowed;
+}
+
+/* Eisenhower Matrix styles */
+.matrix-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:12px;
+}
+
+.matrix-cell{
+  min-height:120px;
+  border-radius:8px;
+  padding:10px;
+  background:linear-gradient(180deg,#04111c,#071526);
+  border:1px solid var(--glass);
+}
+
+.matrix-cell h3{
+  margin:0 0 8px 0;
+  font-size:14px;
+  color:#aee2ff;
+}
+
+.matrix-item{
+  padding:8px;
+  margin-bottom:8px;
+  border-radius:6px;
+  background:rgba(255,255,255,0.02);
+  color:#e6eef8;
+  font-size:13px;
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+}
+
+/* Graph area */
+.graph-area{
+  background:linear-gradient(180deg,#031022,#04152a);
+  padding:12px;
+  border-radius:8px;
+  border:1px solid var(--glass);
+  min-height:220px;
+  overflow:auto;
+}
+
+/* svg node styles */
+.node-rect{
+  fill:#0b3b66;
+  stroke:#6cc1ff;
+  stroke-width:1.4px;
+  rx:8; ry:8;
+}
+.node-rect.cycle{
+  stroke:#ff6b6b;
+  stroke-width:2.6px;
+  filter: drop-shadow(0 6px 10px rgba(255,107,107,0.12));
+}
+.edge-line{
+  stroke:#7fb7ff;
+  stroke-width:1.4px;
+  marker-end:url(#arrowhead);
+}
+
+/* legend */
+.graph-legend{color:var(--muted);font-size:13px;margin-top:8px}
+
+/* responsive tweaks */
+@media (max-width:760px){
+  .matrix-grid{grid-template-columns:1fr;}
+  .matrix-cell{min-height:80px}
+}
