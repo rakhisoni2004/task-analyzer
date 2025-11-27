@@ -22,20 +22,20 @@ Includes 4 strategies:
 ---
 
 ### ✓ Bonus Feature 1 — Dependency Graph Visualization  
-**Tasks rendered as nodes**
-**Directed edges show dependencies**  
-**Cycle detection with red-node highlight**
-**Clean SVG layout with auto spacing and smart label wrapping**  
+- **Tasks rendered as nodes**
+- **Directed edges show dependencies**  
+- **Cycle detection with red-node highlight**
+- **Clean SVG layout with auto spacing and smart label wrapping**  
 
 ---
 
 ### ✓ Bonus Feature 2 — Eisenhower Matrix  
 *Tasks plotted in 4 quadrants:*
-**Urgent & Important (Do First)**
-**Not Urgent but Important (Plan)**
-**Urgent but Not Important (Delegate)**
-**Not Urgent & Not Important (Eliminate)**
-**Color-coded priority indicators included.**
+- **Urgent & Important (Do First)**
+- **Not Urgent but Important (Plan)**
+- **Urgent but Not Important (Delegate)**
+- **Not Urgent & Not Important (Eliminate)**
+- **Color-coded priority indicators included.**
 
 ---
 
