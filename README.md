@@ -83,10 +83,12 @@ Response:
 
 GET /api/tasks/suggest/
 
+
+
+
+
 Returns top 3 tasks with explanations.
-
 🧠 Algorithm Explanation (Summary)
-
 Each task receives a composite score calculated as:
 
 final_score =
@@ -96,28 +98,19 @@ final_score =
     w4 * dependency_component
 
 1) Urgency
-
 Past-due tasks get heavy boost (120 + days overdue).
-
 Due within 3 days → sharply increasing urgency.
-
 Far future → lower urgency.
-
 2) Importance
-
 importance (1–10) × 9
-
 3) Effort (Quick Wins)
-
 Inverse of estimated hours:
-
 effort = 30 / (1 + hours)
-
 4) Dependencies (Blocking Power)
-
 Each task that depends on this task adds weight.
-
 Weights change based on selected strategy.
+
+
 
 📁 Project Structure
 backend/
@@ -134,41 +127,35 @@ requirements.txt
 manage.py
 README.md
 
+
+
 🧪 Running Tests
 python manage.py test tasks -v 2
 
 
 All tests pass (5/5) including:
-
 cycle detection
-
 urgency boost
-
 strategy logic
-
 low-effort prioritization
-
 dependency priority
+
 
 ▶️ Running the App Locally
 1. Create virtual env
 python -m venv venv
-
 2. Activate
-
 Windows:
-
 venv\Scripts\activate
-
 3. Install dependencies
 pip install -r requirements.txt
-
 4. Run server
 python manage.py runserver
 
 
 Open in browser:
 http://127.0.0.1:8000/
+
 
 🖼 Screenshots
  Screenshot 2025-11-27 181348.png 
@@ -177,31 +164,26 @@ http://127.0.0.1:8000/
    Screenshot 2025-11-27 181258.png 
    Screenshot 2025-11-27 181336.png
 
+
+
 📌 Future Improvements
+1 Add database storage for tasks
+2 Drag-drop graph layout
+3 Save strategies per user
+4 AI-based learning for score adjustment
+5 Export task reports
 
-Add database storage for tasks
 
-Drag-drop graph layout
-
-Save strategies per user
-
-AI-based learning for score adjustment
-
-Export task reports
 
 👩‍💻 Author
-
 Rakhi Soni
 Software Developer (Frontend + Backend)
 GitHub: https://github.com/rakhisoni2004
 
 
----
 
 # Final Step — Commit the README
-
 Terminal:
-
 powershell
 git add README.md
 git commit -m "Add professional README"
