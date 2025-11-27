@@ -22,28 +22,27 @@ Includes 4 strategies:
 ---
 
 ### ✓ Bonus Feature 1 — Dependency Graph Visualization  
-- Tasks rendered as nodes  
-- Directed edges show dependencies  
-- **Cycle detection** with red-node highlight  
-- Clean SVG layout with auto spacing and smart label wrapping  
+**Tasks rendered as nodes**
+**Directed edges show dependencies**  
+**Cycle detection with red-node highlight**
+**Clean SVG layout with auto spacing and smart label wrapping**  
 
 ---
 
 ### ✓ Bonus Feature 2 — Eisenhower Matrix  
-Tasks plotted in 4 quadrants:
-- Urgent & Important (Do First)
-- Not Urgent but Important (Plan)
-- Urgent but Not Important (Delegate)
-- Not Urgent & Not Important (Eliminate)
-
-Color-coded priority indicators included.
+*Tasks plotted in 4 quadrants:*
+**Urgent & Important (Do First)**
+**Not Urgent but Important (Plan)**
+**Urgent but Not Important (Delegate)**
+**Not Urgent & Not Important (Eliminate)**
+**Color-coded priority indicators included.**
 
 ---
 
 ### ✓ Responsive Frontend (HTML + CSS + JS)
-- Task input (manual + bulk JSON)
-- Strategy selector dropdown  
-- Priority score display with color coding  
+**Task input (manual + bulk JSON)**
+**Strategy selector dropdown**
+**Priority score display with color coding**
 - Graph view & Matrix view tabs  
 - Clean dark-theme UI  
 - Error handling + loading states  
@@ -59,7 +58,7 @@ final_score =
     w4 * dependency_component
 
 ### 1)  Urgency
-=Past-due tasks get heavy boost (120 + days overdue).
+-Past-due tasks get heavy boost (120 + days overdue).
 -Due within 3 days → sharply increasing urgency.
 -Far future → lower urgency.
 
