@@ -48,7 +48,6 @@ Color-coded priority indicators included.
 - Clean dark-theme UI  
 - Error handling + loading states  
 
-
 Returns top 3 tasks with explanations.
 🧠 Algorithm Explanation (Summary)
 Each task receives a composite score calculated as:
@@ -185,6 +184,25 @@ Response:
 GET /api/tasks/suggest/
 
 
+Commands — run app & tests
+# create venv
+python -m venv venv
 
+# activate (Windows)
+venv\Scripts\activate
+
+# install
+pip install -r requirements.txt
+
+# run server
+python manage.py runserver
+
+# tests
+python manage.py test tasks -v 2
+
+Git — final README commit & push
+git add README.md
+git commit -m "Add polished README"
+git push
 
 
